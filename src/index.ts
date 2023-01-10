@@ -1,19 +1,20 @@
 // run `node index.js` in the terminal
 console.log(`Hello Node.js v${process.versions.node}!`);
-import * as http from 'http';
+import {createServer} from 'http';
 
 //create a server object:
-http
-  .createServer((req, res) => {
+createServer((req, res) => {
     console.log('operation', req.method, 'on', req.url);
     if (req.url != '/') {
       res.statusCode = 404;
-      res.statusMessage = 'Unsupported';
+      res.setHeader("Content-Type", "text/html; charset=utf-8");
       res.write(
-        `Les ressources autres que / ne sont pas supportées ! (error 404)`
+        `Les ressources autres que / ne sont pas supportées ! (error 404)`,
+        'utf-8'
       );
       res.end();
     } else {
+
       res.write(`
       <html>
         <head>
