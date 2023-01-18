@@ -11,9 +11,10 @@ app.use( bodyParser.urlencoded() );
 const port = 8081;
 
 // respond with "hello world" when a GET request is made to the homepage
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
   res.send('hello world');
 });
+*/
 
 app.use('/add', (req, res) => {
     const body = req.body;
