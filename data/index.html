@@ -1,9 +1,33 @@
 <html>
     <head>
         <title>TP 2 M1 MEEF</title>
+        <link id="currentStyle" rel="stylesheet" href="formulaire.css" />
+        <script src="formulaire.js" defer></script>
     </head>
     <body>
         <h1>Coucou !!!</h1>
-        
+        <!-- commentaire ici -->
+        <form action="/api/login" method="post">
+            <label>
+                Identifiant
+                <input type="text" name="login"/>
+            </label>
+            <label>
+                Mot de passe
+                <input type="password" name="password"/>
+            </label>
+            <input type="submit" value="S'identifier"/>
+        </form>
+
+        <hr/>
+        Liste des feuilles de styles :
+        <ul class="style">
+            <li>
+                <a href="">Pas de style...</a>
+            </li>
+            <li>
+                <a href="formulaire.css">Style par défaut</a>
+            </li>
+        </ul>
     </body>
 </html>

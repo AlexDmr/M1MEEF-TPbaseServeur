@@ -11,6 +11,16 @@ const port = 8081;
   res.send('hello world');
 });
 */
+app.post("/api/login", (req, res) => {
+    console.log("On reoit une demnde d'identification...")
+    const body = req.body;
+    if (!!body.login && !!body.password) {
+        res.send(`Bonjour ${body.login}, ton mot de passe est "${body.password}"`);
+    } else {
+        res.status(401).send("Vous devez spécifier un login et un mot de passe...")
+    }
+});
+
 app.use('/add', (req, res) => {
     const body = req.body;
     if (typeof body.a == 'number' && typeof body.b == 'number') {
