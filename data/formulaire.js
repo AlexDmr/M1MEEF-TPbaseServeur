@@ -1,6 +1,7 @@
 "use strict";
 console.log("Coucou le script formulaire est bien chargé");
 document.querySelectorAll("ul.style a").forEach(a => {
+    console.log("Je m'abonne au clique sur la balise", a);
     a.addEventListener("click", evt => {
         evt.preventDefault(); // empécher le traitement par défaut de l'évenement par le navigateur
         // Ne pas envoyer de requête HTTP ni changer la page...    
